@@ -27,6 +27,23 @@ class Maison {
         return $this->nbrEtage;
     }
 
+    public function setNom(?string $newNom): Maison {
+        $this->nom = $newNom;
+        return $this;
+    }
+    public function setLongueur(?int $newLongueur): Maison {
+        $this->longueur = $newLongueur;
+        return $this;
+    }
+    public function setLargeur(?int $newLargeur): Maison {
+        $this->largeur = $newLargeur;
+        return $this;
+    }
+    public function setNbrEtage(?int $newNbrEtage): Maison {
+        $this->nbrEtage = $newNbrEtage;
+        return $this;
+    }
+
     // Méthodes
     public function surface(): void {
         $superficie = ($this->longueur * $this->largeur) * $this->nbrEtage;
