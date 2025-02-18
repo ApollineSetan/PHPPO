@@ -41,6 +41,17 @@ abstract class AbstractPersonnage {
     public abstract function afficher():void;
 
     public function attaquer():void{
-        echo "<p>Le personnage attaque :</p>";
+        echo "<p>" .$this->nom. " tente d'attaquer :</p>";
+        $arme = $this->getArme();
+
+        if ($arme instanceof ProjectileMagique){
+            if ($this instanceof Magicien) {
+                $arme->attaquer();
+            } else {
+                echo "<p>Cet objet est un projectile magique. Seul un magicien peut l'utiliser.</p>";
+            }
+        } else {
+            $arme->attaquer();
+        }
     }
 } 

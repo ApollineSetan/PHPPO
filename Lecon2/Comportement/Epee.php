@@ -19,17 +19,25 @@ class Epee implements InterfaceArme {
         $this->durabilite = $durabilite;
     }
 
+    public function getType(): string {
+        return $this->type;
+    }
+
+    public function setType(string $type): void {
+        $this->type = $type;
+    }
+
     // Méthodes
     public function afficher():void {
         echo "<p> J'utilise une épée de type : " .$this->type. " avec une durabilité de " .$this->durabilite. "</p>";
     }
 
     public function attaquer():void {
-        echo "<p> J'inflige des dégâts avec mon épée</p>";
         $random = rand(1, 100);
         if ($random >= 1 && $random <= 10){
             $this->durabilite--;
-            echo "<p>L'épée perd 1 point de durabilité. Durabilité restante :" .$this->durabilite. "</p>";
+            echo "<p>Il inflige des dégâts avec son épée.</p>";
+            echo "<p>L'épée perd 1 point de durabilité. Durabilité restante : " .$this->durabilite. ".</p>";
         }
         if ($this->durabilite <= 0){
             echo "<p>Mon épée est cassée et ne peut être réutilisée</p>";

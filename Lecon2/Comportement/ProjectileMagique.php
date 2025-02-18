@@ -1,9 +1,25 @@
 <?php 
 class ProjectileMagique implements InterfaceArme {
-    public function afficher():void {
-        echo "<p> J'utilise la magie</p>";
+    // Attributs
+    private string $type;
+
+    // Constructor
+    public function __construct(string $type){
+    $this->type = $type;
     }
+
+    // Getter et Setter
+    public function getType(): string {
+        return $this->type;
+    }
+
+    public function setType(string $type): void {
+        $this->type = $type;
+    }
+
+    public function afficher():void {
+    }
+    
     public function attaquer():void {
-        echo "<p> J'inflige des dégâts avec ma magie</p>";
     }
 }

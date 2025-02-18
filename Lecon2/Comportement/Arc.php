@@ -24,22 +24,12 @@ class Arc implements InterfaceArme {
     }
 
     public function attaquer():void {
-        echo "<p> J'inflige des dégâts avec mon arc</p>";
         if ($this->munition > 0){
-
+            echo "<p> Il inflige des dégâts avec son arc.</p>";
+            $this->munition--;
+            echo "<p> Il reste " .$this->munition. " flêches. </p>";
+        } else {
+            echo "<p> Plus aucune flêche n'est disponible. Je ne peux plus attaquer.</p>";
         }
     }
 }
-
-/*     public function attaquer():void {
-        echo "<p> J'inflige des dégâts avec mon épée</p>";
-        $random = rand(1, 100);
-        if ($random >= 1 && $random <= 10){
-            $this->durabilite--;
-            echo "<p>L'épée perd 1 point de durabilité. Durabilité restante :" .$this->durabilite. "</p>";
-        }
-        if ($this->durabilite <= 0){
-            echo "<p>Mon épée est cassée et ne peut être réutilisée</p>";
-        }
-
-}*/

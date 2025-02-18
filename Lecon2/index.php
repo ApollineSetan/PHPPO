@@ -10,22 +10,26 @@ include './Model/Voleur.php';
 
 
 $epee = new Epee(50, type: "glaive");
+$arc = new Arc(50, type: "elfique");
+$projectilemagique = new ProjectileMagique("puissance suprême");
 
 $guerrier = new Guerrier("Hagrid", $epee, "guerrier");
-echo 'Le nom du guerrier est : ' .$guerrier->getNom(). ".<br>";
+echo 'Le nom du guerrier est ' .$guerrier->getNom(). ".<br>";
 echo ' ' .$guerrier->attaquer();
-echo ' ' .$guerrier->getArme()->attaquer();
 
 echo "<div style='border-bottom : 3px solid black'> </div>";
 
-$voleur = new Voleur("Ariel", new Arc(), "voleur");
-echo 'Le nom du voleur est : ' .$voleur->getNom(). ".<br>";
+$voleur = new Voleur("Ariel", $arc, "voleur");
+echo 'Le nom du voleur est ' .$voleur->getNom(). ".<br>";
 echo ' ' .$voleur->attaquer();
-echo ' ' .$voleur->getArme()->attaquer();
 
 echo "<div style='border-bottom : 3px solid black'> </div>";
 
-$magicien = new Magicien("Père Fourras", new ProjectileMagique(), "magicien", 50 );
-echo 'Le nom du magicien est : ' .$magicien->getNom(). ".<br>";
+$magicien = new Magicien("Père Fourras", $projectilemagique, "magicien", 50 );
+echo 'Le nom du magicien est ' .$magicien->getNom(). ".";
 echo ' ' .$magicien->attaquer();
-echo ' ' .$magicien->getArme()->attaquer();
+
+echo "<div style='border-bottom : 3px solid black'> </div>";
+
+$guerrier->setArme($projectilemagique);
+$guerrier->attaquer();
