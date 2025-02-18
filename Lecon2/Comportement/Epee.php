@@ -29,7 +29,7 @@ class Epee implements InterfaceArme {
 
     // Méthodes
     public function afficher():void {
-        echo "<p> J'utilise une épée de type : " .$this->type. " avec une durabilité de " .$this->durabilite. "</p>";
+        echo "<p> Cette epée est de type : " .$this->type. " avec une durabilité de " .$this->durabilite. "</p>";
     }
 
     public function attaquer():void {

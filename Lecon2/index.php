@@ -14,19 +14,19 @@ $arc = new Arc(50, type: "elfique");
 $projectilemagique = new ProjectileMagique("puissance suprême");
 
 $guerrier = new Guerrier("Hagrid", $epee, "guerrier");
-echo 'Le nom du guerrier est ' .$guerrier->getNom(). ".<br>";
+$guerrier->afficher();
 echo ' ' .$guerrier->attaquer();
 
 echo "<div style='border-bottom : 3px solid black'> </div>";
 
 $voleur = new Voleur("Ariel", $arc, "voleur");
-echo 'Le nom du voleur est ' .$voleur->getNom(). ".<br>";
+$voleur->afficher();
 echo ' ' .$voleur->attaquer();
 
 echo "<div style='border-bottom : 3px solid black'> </div>";
 
 $magicien = new Magicien("Père Fourras", $projectilemagique, "magicien", 50 );
-echo 'Le nom du magicien est ' .$magicien->getNom(). ".";
+$magicien->afficher();
 echo ' ' .$magicien->attaquer();
 
 echo "<div style='border-bottom : 3px solid black'> </div>";

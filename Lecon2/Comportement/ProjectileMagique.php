@@ -17,7 +17,9 @@ class ProjectileMagique implements InterfaceArme {
         $this->type = $type;
     }
 
+    // Méthodes
     public function afficher():void {
+        echo "<p> Ce sort est de type : " .$this->type." .</p>";
     }
     
     public function attaquer():void {

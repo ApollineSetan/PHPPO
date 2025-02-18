@@ -19,8 +19,9 @@ class Arc implements InterfaceArme {
     $this->munition = $munition;
     }
 
+    // Méthodes
     public function afficher():void {
-    echo "<p> J'utilise un arc de type : " .$this->type. " avec " .$this->munition. " munitions.</p>";
+    echo "<p> Cet arc est de type : " .$this->type. " avec " .$this->munition. " munitions.</p>";
     }
 
     public function attaquer():void {
