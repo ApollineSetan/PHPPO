@@ -24,13 +24,15 @@ class Arc implements InterfaceArme {
     echo "<p> Cet arc est de type : " .$this->type. " avec " .$this->munition. " munitions.</p>";
     }
 
-    public function attaquer():void {
+    public function attaquer():?int {
         if ($this->munition > 0){
             echo "<p> Il inflige des dégâts avec son arc.</p>";
             $this->munition--;
             echo "<p> Il reste " .$this->munition. " flêches. </p>";
+            return 15;
         } else {
             echo "<p> Plus aucune flêche n'est disponible. Je ne peux plus attaquer.</p>";
+            return 0;
         }
     }
 }

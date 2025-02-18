@@ -22,6 +22,8 @@ class ProjectileMagique implements InterfaceArme {
         echo "<p> Ce sort est de type : " .$this->type." .</p>";
     }
     
-    public function attaquer():void {
+    public function attaquer():?int {
+        echo "<p>Il lance un projectile magique.</p>";
+        return 25;
     }
 }

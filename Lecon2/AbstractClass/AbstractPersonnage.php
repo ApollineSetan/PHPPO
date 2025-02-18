@@ -40,18 +40,22 @@ abstract class AbstractPersonnage {
     // Méthodes
     public abstract function afficher():void;
 
-    public function attaquer():void{
+    public function attaquer():?int {
         echo "<p>" .$this->nom. " tente d'attaquer :</p>";
         $arme = $this->getArme();
-
-        if ($arme instanceof ProjectileMagique){
+        
+        if ($arme instanceof ProjectileMagique) {
             if ($this instanceof Magicien) {
-                $arme->attaquer();
+                $degats = $arme->attaquer();
+                echo "<p>" .$this->nom. " utilise son projectile magique, infligeant " . $degats . " dégâts.</p>";
+                return $degats;
             } else {
                 echo "<p>Cet objet est un projectile magique. Seul un magicien peut l'utiliser.</p>";
+                return 0;
             }
-        } else {
-            $arme->attaquer();
         }
+        $degats = $arme->attaquer();
+        echo "<p>" .$this->nom. " attaque avec son arme, infligeant " . $degats . " dégâts.</p>";
+        return $degats; 
     }
 } 

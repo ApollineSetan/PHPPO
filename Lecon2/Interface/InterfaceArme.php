@@ -2,5 +2,5 @@
 interface InterfaceArme {
     // Méthodes
     public function afficher():void;
-    public function attaquer():void;
+    public function attaquer():?int;
 }
